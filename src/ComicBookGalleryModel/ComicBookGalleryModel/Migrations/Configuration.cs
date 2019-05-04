@@ -27,14 +27,14 @@ namespace ComicBookGalleryModel.Migrations
                 new Role() { Id = roleIdScript, Name = "Script" },
                 new Role() { Id = roleIdPencils, Name = "Pencils" }
             );
-
+#if DEBUG
             const int artistIdStanLee = 1;
             const int artistIdSteveDitko = 2;
 
             context.Artists.AddOrUpdate(
                 a => a.Id,
-                new Artist() { Id = artistIdStanLee, Name = "Stan Lee" },
-                new Artist() { Id = artistIdSteveDitko, Name = "Steve Ditko" }
+                new Artist() { Id = artistIdStanLee, Name = "Stan Lee", Bio="TBD" },
+                new Artist() { Id = artistIdSteveDitko, Name = "Steve Ditko", Bio = "TBD" }
             );
 
             const int seriesIdSpiderMan = 1;
@@ -99,6 +99,7 @@ namespace ComicBookGalleryModel.Migrations
                 cb => cb.Id,
                 comicBook3
             );
+#endif
         }
     }
 }
